@@ -1,0 +1,51 @@
+<h1 class="mt-4">Funcionario</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item mb-4">
+        Consulta de Funcionario
+    </li>
+</ol>
+<div class="container">
+    <div class="row">
+        
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" class="form-control" name="nome" id="nome" >
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="cpf">CPF:</label>
+                <input type="text" class="form-control" name="cpf" id="cpf" >
+            </div>
+        </div>        
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let funcionario  of funcionarios">
+                        <th>{{ funcionario.id }}</th>
+                        <th>{{ funcionario.nome }}</th>
+                        <th>{{ funcionario.cpf }}</th>
+                        <th>
+                            <button class="btn btn-primary">
+                                    <i class="fa fa-edit"></i>
+                            </button>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

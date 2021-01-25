@@ -1,0 +1,40 @@
+<h1 class="mt-4">Funcao</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item mb-4">
+        Consulta de Funcao
+    </li>
+</ol>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <button class="btn btn-warning" (click)="novoCadastro()">
+                <i class="fa fa-plus"></i>Novo</button>
+
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let funcao  of funcoes  ">
+                        <th>{{ funcao.id }}</th>
+                        <th>{{ funcao.nome }}</th>
+                        <th>
+                            <button class="btn btn-primary">
+                                    <i class="fa fa-edit"></i>
+                            </button>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

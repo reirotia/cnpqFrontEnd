@@ -1,0 +1,49 @@
+<h1 class="mt-4">Funcao</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item mb-4">
+        Cadastro de Funcao
+    </li>
+</ol>
+
+<div class="container">
+    <form #funcaoForm="ngForm" (ngSubmit)="onSubmit()">
+        
+        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-success" role="alert" *ngIf="sucess==true">
+                    Funcão salvo com sucesso!
+                  </div>
+                  <div class="alert alert-danger" role="alert" *ngIf="error==true">
+                    Erro ao tentar salvar Funcão!
+                  </div>
+            </div>
+        </div>
+        
+
+        <div class="row">
+            <div class="col-md-6" *ngIf="funcao.id">
+                <div class="form-group">
+                    <label for="id">ID:</label>
+                    <input type="text" class="form-control" name="id" id="id" disabled=true [ngModel]="funcao.id" >
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="funcao">Funcao:</label>
+                    <input type="text" class="form-control" name="funcao" id="funcao" [(ngModel)]="funcao.nome">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-success">
+                   <i class="fa fa-save"></i> Salvar</button>
+            
+            
+                <button type="button" class="btn btn-danger ml-1" (click)="voltarParaListar()">
+                   <i class="fa fa-arrow-alt-circle-left"></i> Voltar</button>
+            </div>
+        </div>
+    </form>
+</div>

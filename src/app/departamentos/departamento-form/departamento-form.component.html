@@ -1,0 +1,50 @@
+<h1 class="mt-4">Departamento</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item mb-4">
+        Cadastro de Departamento
+    </li>
+</ol>
+
+<div class="container">
+    <form #DepartamentoForm="ngForm" (ngSubmit)="onSubmit()">
+        
+        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-success" role="alert" *ngIf="sucess==true">
+                    Departamento salvo com sucesso!
+                  </div>
+                  <div class="alert alert-danger" role="alert" *ngIf="error==true">
+                    Erro ao tentar salvar Departamento!
+                  </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group" *ngIf="departamento.id">
+                    <label for="id">ID:</label>
+                    <input type="text" class="form-control" name="id" id="id" disabled=true [ngModel]="departamento.id" >
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Departamento">Departamento:</label>
+                    <input type="text" class="form-control" name="Departamento" id="Departamento" [(ngModel)]="departamento.nome">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-success">
+                   <i class="fa fa-save"></i> Salvar</button>
+            
+            
+                <button type="button" class="btn btn-danger ml-1" (click)="voltarParaListar()">
+                   <i class="fa fa-arrow-alt-circle-left"></i> Voltar</button>
+            </div>
+        </div>
+    </form>
+</div>
